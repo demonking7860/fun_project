@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background" aria-hidden="true">
+      <div class="glow"></div>
+      <div class="hearts" id="floatingHearts"></div>
+    </div>
+
+    <header class="top-bar">
+      <button class="icon-button" id="musicToggle" aria-pressed="false" aria-label="Toggle music">
+        <span class="icon" aria-hidden="true">🎵</span>
+        <span class="label">Music</span>
+      </button>
+      <div class="countdown" aria-live="polite">
+        Time left to say YES: <span id="countdownValue">60</span>s
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="card" aria-labelledby="title">
+        <div class="card-glass">
+          <p class="eyebrow">A Question From My Heart</p>
+          <h1 id="title">Harsh will u be my valentine</h1>
+          <p class="subtitle">
+            I ran multiple life simulations…<br />
+            Every version says I’m happiest with you.
+          </p>
+
+          <div class="actions" role="group" aria-label="Valentine response">
+            <button class="btn btn-yes" id="yesButton">YES 💖</button>
+            <button class="btn btn-no" id="noButton">NO 🙃</button>
+          </div>
+
+          <div class="status" id="statusMessage" role="status" aria-live="polite"></div>
+          <div class="tooltip" id="noTooltip" role="status" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal" id="successModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-content" role="document">
+        <h2>Best decision ever! ❤️</h2>
+        <p>
+          You just made my heart do the happiest little glitch. Thank you for
+          choosing me — today, tomorrow, always.
+        </p>
+        <button class="btn btn-yes" id="closeModal">Close</button>
+      </div>
+    </div>
+
+    <div class="confetti" id="confettiLayer" aria-hidden="true"></div>
+    <div class="cursor-trail" id="cursorTrail" aria-hidden="true"></div>
+    <audio id="noAudio" src="no-no-wait.mp3" preload="auto"></audio>
+    <audio id="musicAudio" src="music.mp3" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
